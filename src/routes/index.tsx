@@ -143,7 +143,7 @@ function BirthdayExperience() {
         <div className="scene-shade" />
         <div className="cover-content">
           <p className="eyebrow">For the girl who makes ordinary feel cinematic</p>
-          <h1>Not your average 19.<br /><em>Not your average girl.</em></h1>
+          <h1>Happy Last Teen Cutuuuu &lt;3</h1>
           {!started ? (
             <button className="volume-card" onClick={startExperience}>
               <span className="headphone-pulse"><Volume2 aria-hidden="true" /></span>
