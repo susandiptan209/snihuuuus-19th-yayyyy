@@ -126,11 +126,16 @@ function BirthdayExperience() {
       <audio ref={firstAudio} src={firstSongAsset.url} loop preload="auto" />
       <audio ref={secondAudio} src={secondSongAsset.url} loop preload="auto" />
 
-      {started && (
-        <button className="sound-button" onClick={toggleSound} aria-label={muted ? "Turn sound on" : "Mute music"}>
-          {muted ? <Music2 aria-hidden="true" /> : <Volume2 aria-hidden="true" />}
-        </button>
-      )}
+      <button
+        className="sound-button"
+        onClick={toggleSound}
+        aria-label={muted ? "Turn sound on" : "Mute music"}
+        hidden={!started}
+        style={{ display: started ? undefined : "none" }}
+      >
+        <Music2 aria-hidden="true" style={{ display: muted ? undefined : "none" }} />
+        <Volume2 aria-hidden="true" style={{ display: muted ? "none" : undefined }} />
+      </button>
 
       <nav className="scene-progress" aria-label={`Scene ${scene + 1} of 3`}>
         {[0, 1, 2].map((dot) => (
