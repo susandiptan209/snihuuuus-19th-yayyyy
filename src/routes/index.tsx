@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ChevronDown, Heart, Music2, Pause, Volume2 } from "lucide-react";
+import { ChevronDown, Heart, Music2, Pause, RotateCcw, Volume2 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import coverAsset from "@/assets/snihu-cover.webp.asset.json";
@@ -91,6 +91,21 @@ function BirthdayExperience() {
     }, 75);
   };
 
+  const backToStart = () => {
+    setScene(0);
+    clearFade();
+    const first = firstAudio.current;
+    const second = secondAudio.current;
+    if (second) {
+      second.pause();
+      second.volume = 0;
+    }
+    if (first && !muted) {
+      first.volume = 0.72;
+      first.play().catch(() => setMuted(true));
+    }
+  };
+
   const toggleSound = async () => {
     const nextMuted = !muted;
     setMuted(nextMuted);
@@ -168,6 +183,9 @@ function BirthdayExperience() {
           <p>I hope and pray the good Lord keeps you safe, happy, and healthy.</p>
            <strong>Lots of love,<br /><em>your Bachuuuuu</em> 💛</strong>
           <Pause className="closing-mark" aria-hidden="true" />
+          <button className="back-action" onClick={backToStart}>
+            Relive it from the start <RotateCcw aria-hidden="true" />
+          </button>
         </div>
       </section>
     </main>
