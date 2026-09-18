@@ -149,16 +149,21 @@ function BirthdayExperience() {
         <div className="cover-content">
           <p className="eyebrow">For the girl who makes ordinary feel cinematic</p>
           <h1>Happy Last Teen Cutuuuu &lt;3</h1>
-          {!started ? (
-            <button className="volume-card" onClick={startExperience}>
-              <span className="headphone-pulse"><Volume2 aria-hidden="true" /></span>
-              <span><strong>Turn your volume up</strong><small>tap here to begin</small></span>
-            </button>
-          ) : (
-            <button className="primary-action" onClick={openWish}>
-              Tap if you dare <Heart aria-hidden="true" />
-            </button>
-          )}
+          <button
+            className="volume-card"
+            onClick={startExperience}
+            style={{ display: started ? "none" : undefined }}
+          >
+            <span className="headphone-pulse"><Volume2 aria-hidden="true" /></span>
+            <span><strong>Turn your volume up</strong><small>tap here to begin</small></span>
+          </button>
+          <button
+            className="primary-action"
+            onClick={openWish}
+            style={{ display: started ? undefined : "none" }}
+          >
+            Tap if you dare <Heart aria-hidden="true" />
+          </button>
         </div>
       </section>
 
