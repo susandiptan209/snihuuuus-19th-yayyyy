@@ -78,8 +78,8 @@ button { font: inherit; }
 .progress-dot { width: .32rem; height: .32rem; border-radius: 1rem; background: var(--muted-foreground); opacity: .45; transition: width 400ms ease, opacity 400ms ease, background 400ms ease; }
 .progress-dot.is-active { width: 1.35rem; background: var(--primary); opacity: 1; }
 
-.wish-image { inset: -1.5rem; width: calc(100% + 3rem); height: calc(100% + 3rem); object-position: center; filter: blur(15px) saturate(.72); transform: scale(1.08); }
-.wish-veil { position: absolute; inset: 0; background: linear-gradient(160deg, oklch(0.1 0.03 30 / 72%), oklch(0.2 0.06 62 / 84%)); }
+.wish-image { inset: -1rem; width: calc(100% + 2rem); height: calc(100% + 2rem); object-position: center; filter: blur(5px) saturate(.95); transform: scale(1.04); }
+.wish-veil { position: absolute; inset: 0; background: linear-gradient(160deg, oklch(0.1 0.03 30 / 45%), oklch(0.2 0.06 62 / 55%)); }
 .wish-scroll { position: relative; z-index: 1; height: 100svh; overflow-y: auto; padding: max(4.75rem, calc(env(safe-area-inset-top) + 3.5rem)) 1.3rem max(2.5rem, env(safe-area-inset-bottom)); scrollbar-width: none; }
 .wish-scroll::-webkit-scrollbar { display: none; }
 .wish-scroll h2 { font-size: clamp(3rem, 15vw, 5.5rem); }
