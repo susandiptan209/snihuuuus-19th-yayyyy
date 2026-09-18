@@ -166,7 +166,7 @@ function BirthdayExperience() {
           <span className="final-kicker">nineteen looks lovely on you</span>
           <p>Cheers to your 19th year — your last teen year 🥂</p>
           <p>I hope and pray the good Lord keeps you safe, happy, and healthy.</p>
-          <strong>Lots of love,<br /><em>your Bachu</em> 💛</strong>
+           <strong>Lots of love,<br /><em>your Bachuuuuu</em> 💛</strong>
           <Pause className="closing-mark" aria-hidden="true" />
         </div>
       </section>
