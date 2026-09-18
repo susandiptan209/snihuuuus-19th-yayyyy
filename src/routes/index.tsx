@@ -171,7 +171,7 @@ function BirthdayExperience() {
         <img className="scene-image wish-image" src={collageAsset.url} alt="A handmade yellow birthday collage for Snihu" />
         <div className="wish-veil" />
         <div className="wish-scroll">
-          <p className="eyebrow">A little note from your Bachu</p>
+          <p className="eyebrow">A LITTLE NOTE FROM YOUR BACHUUU</p>
           <h2>Happy Birthday,<br /><em>Bacchu.</em></h2>
           <div className="wish-copy">
             {wishParagraphs.map((paragraph, index) => (
