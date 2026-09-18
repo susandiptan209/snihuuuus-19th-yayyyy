@@ -7,7 +7,7 @@
 
 ## Scene flow
 1. **Cover:** Show “Not your average 19. Not your average girl.” with a pulsing volume prompt and “Tap if you dare.” The first tap starts “Du Haatey Mutho Bhorey” and opens the wish.
-2. **Main wish:** Crossfade into “Ishq Hai,” show the yellow collage through a soft glassy treatment, and animate a heartfelt birthday message in readable lines.
+2. **Main wish:** Crossfade into “Ishq Hai,” show the yellow collage through a soft glassy treatment, and animate the supplied personal birthday message in elegant, highly readable lines over a stronger blur.
 3. **Closing:** Continue into the floral solo portrait with the supplied “Cheers to your 19th year…” message and leave it as the lingering final view.
 
 ## Controls and polish
