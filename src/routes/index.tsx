@@ -2,11 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ChevronDown, Heart, Music2, Pause, RotateCcw, Volume2 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import coverAsset from "@/assets/snihu-cover.webp.asset.json";
-import collageAsset from "@/assets/snihu-collage.png.asset.json";
-import soloAsset from "@/assets/snihu-solo.png.asset.json";
-import firstSongAsset from "@/assets/du-haatey-mutho-bhorey.mp3.asset.json";
-import secondSongAsset from "@/assets/ishq-hai.mp3.asset.json";
+import coverImage from "@/assets/snihu-cover.webp";
+import collageImage from "@/assets/snihu-collage.png";
+import soloImage from "@/assets/snihu-solo.png";
+import firstSong from "@/assets/du-haatey-mutho-bhorey.mp3";
+import secondSong from "@/assets/ishq-hai.mp3";
 
 export const Route = createFileRoute("/")({
   head: () => ({
