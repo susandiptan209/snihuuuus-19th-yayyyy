@@ -123,8 +123,8 @@ function BirthdayExperience() {
 
   return (
     <main className="birthday-shell">
-      <audio ref={firstAudio} src={firstSongAsset.url} loop preload="auto" />
-      <audio ref={secondAudio} src={secondSongAsset.url} loop preload="auto" />
+      <audio ref={firstAudio} src={firstSong} loop preload="auto" />
+      <audio ref={secondAudio} src={secondSong} loop preload="auto" />
 
       <button
         className="sound-button"
@@ -144,7 +144,7 @@ function BirthdayExperience() {
       </nav>
 
       <section className={scene === 0 ? "birthday-scene cover-scene is-active" : "birthday-scene cover-scene"} aria-hidden={scene !== 0}>
-        <img className="scene-image cover-image" src={coverAsset.url} alt="Birthday memories in a filmstrip collage" />
+        <img className="scene-image cover-image" src={coverImage} alt="Birthday memories in a filmstrip collage" />
         <div className="scene-shade" />
         <div className="cover-content">
           <p className="eyebrow">For the girl who makes ordinary feel cinematic</p>
@@ -168,7 +168,7 @@ function BirthdayExperience() {
       </section>
 
       <section className={scene === 1 ? "birthday-scene wish-scene is-active" : "birthday-scene wish-scene"} aria-hidden={scene !== 1}>
-        <img className="scene-image wish-image" src={collageAsset.url} alt="A handmade yellow birthday collage for Snihu" />
+        <img className="scene-image wish-image" src={collageImage} alt="A handmade yellow birthday collage for Snihu" />
         <div className="wish-veil" />
         <div className="wish-scroll">
           <p className="eyebrow">A LITTLE NOTE FROM YOUR BACHUUU</p>
@@ -185,7 +185,7 @@ function BirthdayExperience() {
       </section>
 
       <section className={scene === 2 ? "birthday-scene final-scene is-active" : "birthday-scene final-scene"} aria-hidden={scene !== 2}>
-        <img className="scene-image final-image" src={soloAsset.url} alt="Snihu in blue, surrounded by lotus flowers" />
+        <img className="scene-image final-image" src={soloImage} alt="Snihu in blue, surrounded by lotus flowers" />
         <div className="final-shade" />
         <div className="final-message">
           <span className="final-kicker">nineteen looks lovely on you</span>
