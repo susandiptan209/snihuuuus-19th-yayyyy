@@ -161,6 +161,14 @@ function BirthdayExperience() {
         ))}
       </nav>
 
+      <div className="visit-counter" style={{ display: visits === null ? "none" : undefined }}>
+        <Eye aria-hidden="true" />
+        <span>
+          <strong>{visits ?? 0}</strong> visits
+        </span>
+      </div>
+
+
       <section className={scene === 0 ? "birthday-scene cover-scene is-active" : "birthday-scene cover-scene"} aria-hidden={scene !== 0}>
         <img className="scene-image cover-image" src={coverImage} alt="Birthday memories in a filmstrip collage" />
         <div className="scene-shade" />
