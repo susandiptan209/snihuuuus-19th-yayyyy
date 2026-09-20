@@ -43,6 +43,7 @@ function BirthdayExperience() {
   const [scene, setScene] = useState(0);
   const [started, setStarted] = useState(false);
   const [muted, setMuted] = useState(false);
+  const [visits, setVisits] = useState<number | null>(null);
   const firstAudio = useRef<HTMLAudioElement>(null);
   const secondAudio = useRef<HTMLAudioElement>(null);
   const fadeTimer = useRef<number | null>(null);
@@ -53,6 +54,20 @@ function BirthdayExperience() {
   }, []);
 
   useEffect(() => clearFade, [clearFade]);
+
+  useEffect(() => {
+    let cancelled = false;
+    supabase
+      .rpc("increment_visit", { _id: "birthday" })
+      .then(({ data, error }) => {
+        if (cancelled || error || data === null) return;
+        setVisits(Number(data));
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
 
   const startExperience = async () => {
     const audio = firstAudio.current;
