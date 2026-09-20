@@ -47,6 +47,7 @@ function BirthdayExperience() {
   const firstAudio = useRef<HTMLAudioElement>(null);
   const secondAudio = useRef<HTMLAudioElement>(null);
   const fadeTimer = useRef<number | null>(null);
+  const counted = useRef(false);
 
   const clearFade = useCallback(() => {
     if (fadeTimer.current !== null) window.clearInterval(fadeTimer.current);
@@ -56,6 +57,8 @@ function BirthdayExperience() {
   useEffect(() => clearFade, [clearFade]);
 
   useEffect(() => {
+    if (counted.current) return;
+    counted.current = true;
     let cancelled = false;
     supabase
       .rpc("increment_visit", { _id: "birthday" })
