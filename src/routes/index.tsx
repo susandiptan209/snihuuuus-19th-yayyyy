@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ChevronDown, Heart, Music2, Pause, RotateCcw, Volume2 } from "lucide-react";
+import { ChevronDown, Eye, Heart, Music2, Pause, RotateCcw, Volume2 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
+
+import { supabase } from "@/integrations/supabase/client";
+
 
 import coverImage from "@/assets/snihu-cover.webp";
 import collageImage from "@/assets/snihu-collage.png";
@@ -40,9 +43,11 @@ function BirthdayExperience() {
   const [scene, setScene] = useState(0);
   const [started, setStarted] = useState(false);
   const [muted, setMuted] = useState(false);
+  const [visits, setVisits] = useState<number | null>(null);
   const firstAudio = useRef<HTMLAudioElement>(null);
   const secondAudio = useRef<HTMLAudioElement>(null);
   const fadeTimer = useRef<number | null>(null);
+  const counted = useRef(false);
 
   const clearFade = useCallback(() => {
     if (fadeTimer.current !== null) window.clearInterval(fadeTimer.current);
@@ -50,6 +55,22 @@ function BirthdayExperience() {
   }, []);
 
   useEffect(() => clearFade, [clearFade]);
+
+  useEffect(() => {
+    if (counted.current) return;
+    counted.current = true;
+    let cancelled = false;
+    supabase
+      .rpc("increment_visit", { _id: "birthday" })
+      .then(({ data, error }) => {
+        if (cancelled || error || data === null) return;
+        setVisits(Number(data));
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
 
   const startExperience = async () => {
     const audio = firstAudio.current;
@@ -142,6 +163,14 @@ function BirthdayExperience() {
           <span key={dot} className={dot === scene ? "progress-dot is-active" : "progress-dot"} />
         ))}
       </nav>
+
+      <div className="visit-counter" style={{ display: visits === null ? "none" : undefined }}>
+        <Eye aria-hidden="true" />
+        <span>
+          <strong>{visits ?? 0}</strong> visits
+        </span>
+      </div>
+
 
       <section className={scene === 0 ? "birthday-scene cover-scene is-active" : "birthday-scene cover-scene"} aria-hidden={scene !== 0}>
         <img className="scene-image cover-image" src={coverImage} alt="Birthday memories in a filmstrip collage" />
