@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ChevronDown, Heart, Music2, Pause, RotateCcw, Volume2 } from "lucide-react";
+import { ChevronDown, Eye, Heart, Music2, Pause, RotateCcw, Volume2 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
+
+import { supabase } from "@/integrations/supabase/client";
+
 
 import coverImage from "@/assets/snihu-cover.webp";
 import collageImage from "@/assets/snihu-collage.png";

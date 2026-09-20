@@ -77,6 +77,9 @@ button { font: inherit; }
 .scene-progress { position: fixed; top: max(1.45rem, calc(env(safe-area-inset-top) + .45rem)); left: 50%; z-index: 20; display: flex; gap: .42rem; transform: translateX(-50%); }
 .progress-dot { width: .32rem; height: .32rem; border-radius: 1rem; background: var(--muted-foreground); opacity: .45; transition: width 400ms ease, opacity 400ms ease, background 400ms ease; }
 .progress-dot.is-active { width: 1.35rem; background: var(--primary); opacity: 1; }
+.visit-counter { position: fixed; bottom: max(.85rem, env(safe-area-inset-bottom)); left: 50%; z-index: 20; display: flex; align-items: center; gap: .4rem; padding: .34rem .72rem; border-radius: 999px; border: 1px solid var(--border); background: var(--glass); backdrop-filter: blur(14px); transform: translateX(-50%); font-size: .68rem; letter-spacing: .09em; text-transform: uppercase; color: var(--muted-foreground); }
+.visit-counter svg { width: .8rem; color: var(--primary); }
+.visit-counter strong { color: var(--foreground); font-weight: 700; letter-spacing: .04em; }
 
 .wish-image { inset: -1rem; width: calc(100% + 2rem); height: calc(100% + 2rem); object-position: center; filter: blur(5px) saturate(.95); transform: scale(1.04); }
 .wish-veil { position: absolute; inset: 0; background: linear-gradient(160deg, oklch(0.1 0.03 30 / 45%), oklch(0.2 0.06 62 / 55%)); }
